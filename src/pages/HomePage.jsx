@@ -1,9 +1,15 @@
 import React from 'react';
-import Counter from '../components/counter';
+import Banner from '../components/banner';
+import Navigation from '../components/navigation';
+import Footer from '../components/footer';
 
 const HomePage = () => {
     return (
-        <Counter/>
+        <div>
+            <Navigation/>
+            <Banner/>
+            <Footer/>
+        </div>
     );
 }
 
