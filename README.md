@@ -34,4 +34,6 @@ Build production code
 ```
 1. react to render page and implement immediate update.
 
+2. replace Redux reducer with react useReducer built-in API
+
 ```
