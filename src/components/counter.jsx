@@ -1,20 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useReducer } from 'react';
+import { counterReducer, initialState } from '../reducers/counterReducer';
 
 const Counter = () => {
-    const initialState = 0;
-    const [count, setCount] = useState(initialState);
+    /* useStatet = this.state */
+    // const initialState = 0;
+    // const [count, setCount] = useState(initialState);
 
+    const [state, dispatch] = useReducer(counterReducer, initialState);
     useEffect(() => {
-        // Update the document title using the browser API
-        document.title = `You clicked ${count} times`;
+        document.title = `You clicked ${state.count} times`;
     });
 
     return (
         <div>
-            <div>You clicked {count} times</div>
-            <button onClick={() => setCount(initialState)}>Reset</button>
-            <button onClick={() => setCount(count + 1)}>Increase</button>
-            <button onClick={() => setCount(count - 1)}>Decrease</button>
+            <div>You clicked {state.count} times</div>
+            <button onClick={() => dispatch({type: 'reset'})}>Reset</button>
+            <button onClick={() => dispatch({type: 'increment'})}>Increase</button>
+            <button onClick={() => dispatch({type: 'decrement'})}>Decrease</button>
         </div>
     );
 };
