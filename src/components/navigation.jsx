@@ -4,8 +4,9 @@ import { counterReducer, initialState } from '../reducers/counterReducer';
 const Navigation = () => {
     const [state, dispatch] = useReducer(counterReducer, initialState);
 
+    // console.log(state, useReducer(counterReducer, initialState))
     return (
-    <div>Navigation: show clicked {state.count} times</div>
+        <div>Navigation: show clicked {state.count} times</div>
     );
 };
 
