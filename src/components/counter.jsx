@@ -1,16 +1,17 @@
-import React, { useEffect, useReducer } from 'react';
-import { counterReducer, initialState } from '../reducers/counterReducer';
+import React, { useEffect } from 'react';
+import { useStore } from '../store/store';
 
 const Counter = () => {
     /* useStatet = this.state */
     // const initialState = 0;
     // const [count, setCount] = useState(initialState);
+    const { state, dispatch } = useStore();
 
-    const [state, dispatch] = useReducer(counterReducer, initialState);
+    // const [state, dispatch] = useReducer(counterReducer, initialState);
     useEffect(() => {
         document.title = `You clicked ${state.count} times`;
     });
-
+    console.log(state)
     return (
         <div>
             <div>You clicked {state.count} times</div>

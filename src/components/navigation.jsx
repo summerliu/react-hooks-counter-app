@@ -1,12 +1,13 @@
-import React, { useReducer } from 'react';
-import { counterReducer, initialState } from '../reducers/counterReducer';
+import React from 'react';
+// import { useStore } from '../store/store';
 
 const Navigation = () => {
-    const [state, dispatch] = useReducer(counterReducer, initialState);
-
+    // const { state } = useStore();
+    // console.log(state)
+    // const [state, dispatch] = useReducer(counterReducer, initialState);
     // console.log(state, useReducer(counterReducer, initialState))
     return (
-        <div>Navigation: show clicked {state.count} times</div>
+        <div>Navigation: show clicked  times</div>
     );
 };
 
